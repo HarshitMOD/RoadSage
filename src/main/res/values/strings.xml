@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RoadSage</string>
+    <string name="speech_prompt">Say Something</string>
+    <string name="speech_not_supported">Device does not support Speech Recognition</string>
+    <string name="ble_not_supported">Device does not support Bluetooth Low Energy</string>
+    <string name="unknown_device">Unknown Device</string>
+</resources>
