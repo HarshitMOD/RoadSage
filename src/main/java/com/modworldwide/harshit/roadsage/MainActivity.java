@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button connectButton;
     ImageButton imageButton;
     TextView txtSpeech;
     final int REQ_CODE_SPEECH_INPUT = 100;
@@ -27,19 +29,25 @@ public class MainActivity extends AppCompatActivity {
 
         txtSpeech = (TextView) findViewById(R.id.txtSpeech);
         imageButton = (ImageButton) findViewById(R.id.imageButton1);
+        connectButton = (Button) findViewById(R.id.ConnectButton);
 
         addListenerOnButton();
     }
 
     public void addListenerOnButton() {
 
-
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(MainActivity.this, "ImageButton was clicked!", Toast.LENGTH_SHORT);
-                toast.show();
                 promptSpeechInput();
+            }
+        });
+
+        connectButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(MainActivity.this, Connect.class);
+                MainActivity.this.startActivity(intent);
             }
         });
     }
